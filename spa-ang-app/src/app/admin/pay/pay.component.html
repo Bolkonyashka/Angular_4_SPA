@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 top-el">
+        <form>
+          <h3>Сортировка по полю</h3>    
+          <select name="sortfield" class="form-control" [(ngModel)]="sortField">
+            <option value="id">ID</option>
+            <option value="cardNum">Номер карты</option>
+            <option value="date">Действительна до</option>
+            <option value="cvc">CVC</option>
+            <option value="sum">Сумма</option>
+            <option value="comm">Комментарий</option>
+            <option value="email">Эл.почта</option>
+            <option value="safe">Опасность</option>
+          </select>
+          <h3>Порядок сортировки</h3>    
+          <select name="sortord" class="form-control" [(ngModel)]="sortOrder">
+            <option value="">Прямой</option>
+            <option value="DESC">Обратный</option>
+          </select>
+          <h3>Поле для фильтрации</h3>    
+          <select name="filterfield" class="form-control" [(ngModel)]="filterField">
+            <option value="nope">Нет</option>
+            <option value="id">ID</option>
+            <option value="cardNum">Номер карты</option>
+            <option value="date">Действительна до</option>
+            <option value="cvc">CVC</option>
+            <option value="sum">Сумма</option>
+            <option value="comm">Комментарий</option>
+            <option value="email">Эл.почта</option>
+            <option value="safe">Опасность</option>
+          </select>
+          <h3>Значение для фильтрации</h3>
+          <input class="form-control" name="filterval" [(ngModel)]="filterVal">
+          <button [disabled]="loading" type="button" class="btn btn-primary top-el" (click)="submit(sortField, sortOrder, filterField, filterVal)">Показать</button>
+          <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        </form>
+        <div *ngIf="done">
+          <table class="table table-bordered table-hover top-el">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Номер карты</th>
+                <th>Действительна до</th>
+                <th>CVC</th>
+                <th>Сумма</th>
+                <th>Комментарий</th>
+                <th>Эл.почта</th>
+                <th>Опасный платеж</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let p of pays" class={{p.Class}}>
+                <td>{{ p.ID }}</td>
+                <td>{{ p.CardNumber }}</td>
+                <td>{{ p.Date }}</td>
+                <td>{{ p.CVC }}</td>
+                <td>{{ p.Sum }}</td>
+                <td>{{ p.Comm }}</td>
+                <td>{{ p.Email }}</td>
+                <td>{{ p.Safe }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="col-md-12 top-el">
+            <form>
+              <h3>Изменить безопасность у платежа с ID:</h3>
+              <input class="form-control" [(ngModel)]="chSafeID" name="id" mask="000000" pattern="^[0-9]+$">
+              <select name="srtfield" class="form-control top-el" [(ngModel)]="chSafeStat">
+                  <option value="0">Безопасный</option>
+                  <option value="1">Опасный</option>
+              </select>
+              <button [disabled]="loading" type="button" class="btn btn-primary top-el bot-el" (click)="chSafe(chSafeID, chSafeStat, sortField, sortOrder, filterField, filterVal)">Изменить</button>
+              <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

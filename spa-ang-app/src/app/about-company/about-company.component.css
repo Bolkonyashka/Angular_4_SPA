@@ -1,0 +1,70 @@
+#AboutBlock {
+    padding: 5%;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    margin-bottom: 180px;
+}
+#CompanyName {
+    font-size: 28pt;
+    font-weight: 600;
+    color: rgb(85, 100, 163);
+}
+#CompanyProducts {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+}
+#ProductPreview {
+    margin: 2%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    width: 20%;
+    border: 1px solid rgb(209, 209, 209);
+    white-space: normal;
+}
+#ProductPreview img {
+    padding: 8%;
+    width: 80%;
+    height: auto;
+}
+#PrName {
+    padding-top: 10px;
+    font-weight: 600;
+    height: 40px;
+}
+#PrPrice {
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+#CompanyDescription {
+    padding-top: 20px;
+    padding-right: 20%;
+    padding-left: 30px;
+    font-size: 14pt;
+    font-weight: 600;
+}
+#DescriptionFull {
+    padding-top: 20px;
+}
+@media (max-width: 767px) {
+    #CompanyProducts {
+        white-space: normal;
+    }
+    #ProductPreview {
+        width: 40%;
+    }
+}
+@media (max-width: 459px) {
+    #ProductPreview {
+        width: 90%;
+    }
+    #CompanyName {
+        font-size: 20pt;
+    }
+    #CompanyDescription {
+        font-size: 12pt;
+    }
+}

@@ -1,0 +1,46 @@
+#ClientBlock {
+    overflow: hidden;
+    padding: 30px;
+    box-shadow: 0px 15px 15px -15px rgb(177, 175, 175);
+}
+#ClientName { 
+    font-size: 30pt;
+    font-weight: 600;
+    color: rgb(85, 100, 163);
+}
+#ClientContactes {
+    max-width: 650px;
+    font-size: 16pt;
+    font-weight: 500;
+    color: rgb(85, 100, 163);
+}
+#Icon img {
+    width: 30%;
+    max-width: 300px;
+    max-height: 300px;
+}
+#TextInfo {
+    width: 60%;
+    float: left;
+}
+.Contactes {
+    display: inline-block;
+    vertical-align:top;
+    padding-right: 30px;
+}
+@media (max-width: 767px) {
+    #Icon img {
+        width: 100%;
+    }
+    #TextInfo {
+        width: 100%;
+    }
+}
+@media (max-width: 459px) {
+    #ClientName { 
+        font-size: 20pt;
+    }
+    #ClientContactes {
+        font-size: 12pt;
+    }
+}

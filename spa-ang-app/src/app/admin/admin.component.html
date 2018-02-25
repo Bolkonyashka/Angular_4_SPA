@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 top-el">
+        <div class="col-md-12 bot-el">
+            <button type="button" class="btn btn-default pull-right" (click)="logout()">Выйти из панели администратора</button>
+        </div>
+        <ul class="nav nav-pills">
+            <li class="col-md-5 choice active"><a href="#pay" data-toggle="pill">Платежи</a></li>
+            <li class="col-md-5 choice"><a href="#reqpay" data-toggle="pill">Запрошенные платежи</a></li>
+        </ul>
+        <div class="tab-content">
+            <app-pay id="pay" class="tab-pane fade in active"></app-pay>        
+            <app-reqpay id="reqpay" class="tab-pane fade"></app-reqpay>
+        </div>
+      </div>
+  </div>
+</div>

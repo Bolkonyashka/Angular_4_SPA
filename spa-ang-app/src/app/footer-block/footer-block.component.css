@@ -1,0 +1,40 @@
+.vk {
+    display: inline-block;
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #455C81; 
+}
+.vk img {
+    width: 100%;
+}
+.fb {
+    display: inline-block;
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #414F91;
+}
+.fb img {
+    width: 100%;
+}
+.tw {
+    display: inline-block;
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #4AA2D7;
+}
+.tw img {
+    width: 100%;
+}
+footer {
+    position: absolute;
+    padding: 4%;
+    padding-top: 40px;
+    padding-bottom: 30px;   
+    width: 90%;
+    left: 0;
+    bottom: 0;
+    height: 110px;
+}

@@ -1,0 +1,170 @@
+#Action {
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    overflow: hidden;
+    box-shadow: 0px 15px 15px -15px rgb(177, 175, 175);
+}
+#CardNumber {
+    padding-left: 10px;
+	margin-left: 4%;
+    width: 85%;
+	height: 30px;
+	margin-top: 20px;
+    outline: 0;
+    border: rgb(245, 245, 245);
+    background: inherit;
+	border-bottom: 2px solid rgb(209, 209, 209);
+	font-size: 16px;
+}
+#Date {
+    padding-left: 20px;
+	margin-left: 4%;
+    width: 40%;
+	height: 30px;
+	margin-top: 20px;
+    outline: 0;
+    border: rgb(245, 245, 245);
+    background: inherit;
+	border-bottom: 2px solid rgb(209, 209, 209);
+	font-size: 16px;
+}
+#CVC {
+    padding-left: 20px;
+	margin-left: 4%;
+    width: 30%;
+	height: 30px;
+	margin-top: 20px;
+    outline: 0;
+    border: rgb(245, 245, 245);
+    background: inherit;
+	border-bottom: 2px solid rgb(209, 209, 209);
+	font-size: 16px;
+}
+.PayCard {
+    display: inline-block;
+    width: 30%;
+    margin-top: 50px;
+    margin-right: 8%;
+    padding-bottom: 30px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 25px;
+    box-shadow: 0px 8px 20px 4px rgb(177, 175, 175);
+}
+.CardTypes {
+    padding: 20px;
+    padding-left: 50%;
+}
+.CardTypes img {
+    width: 100%;
+}
+#CardNumber.ng-invalid.ng-touched {
+    border-bottom: 2px solid red;
+}
+#CardNumber.ng-valid.ng-touched {
+    border-bottom: 2px solid green;
+}
+#Date.ng-invalid.ng-touched {
+    border-bottom: 2px solid red;
+}
+#Date.ng-valid.ng-touched {
+    border-bottom: 2px solid green;
+}
+#CVC.ng-invalid.ng-touched {
+    border-bottom: 2px solid red;
+}
+#CVC.ng-valid.ng-touched {
+    border-bottom: 2px solid green;
+}
+.PayForm1 {
+    display: inline-block;
+    margin-top: 50px;
+    width: 60%;
+    vertical-align: top;
+    overflow: hidden;
+}
+.InpForm {
+    overflow: hidden;
+}
+.InpInfo {
+    float: left;
+    width: 50%;
+    font-size: 16pt;
+    font-weight: 600;
+	margin-left: 10px;
+	margin-top: 30px;
+}
+.Inp {
+    float: right;
+    width: 45%;
+    padding-left: 10px;
+	margin-left: 0px;
+	margin-top: 30px;
+    outline: 0;
+    border: rgb(245, 245, 245);
+    background: inherit;
+	border-bottom: 2px solid rgb(209, 209, 209);
+	font-size: 16px;
+}
+.Inp.ng-invalid.ng-touched {
+    border-bottom: 2px solid red;
+}
+.Inp.ng-valid.ng-touched {
+    border-bottom: 2px solid green;
+}
+.PayForm1 button {
+    float: left;
+    width: 50%;
+    font-size: 16pt;
+    font-weight: 600;
+	margin-left: 10px;
+    margin-top: 30px;
+    font-size: 14pt;
+    font-weight: 500;
+    background-color: rgba(158, 136, 248, 0.329);
+    border: 1px solid grey;
+    height: 40px;
+    outline: 0;
+}
+.PayForm1 button:hover {
+    background-color: rgb(193, 179, 255);
+    cursor: pointer;
+}
+.PayForm1 button:disabled {
+    background-color: rgb(150, 150, 150);
+    cursor: default;
+}
+@media (max-width: 767px) {
+    .PayForm1 {
+        width: 90%;
+    }
+    .PayCard {
+        width: 60%;
+    }
+    .Inp {
+        float: left;
+        width: 80%;
+        font-size: 14px;
+    }
+    .InpInfo {
+        width: 80%;
+        font-size: 14pt;
+    }
+}
+@media (max-width: 459px) {
+    .PayCard {
+        width: 100%;
+    }
+    .Inp {
+        font-size: 12px;
+    }
+    .InpInfo {
+        font-size: 12pt;
+    }
+    .PayForm1 button {
+        font-size: 10pt;
+    }
+    #CardNumber {
+        font-size: 14px;
+    }
+}

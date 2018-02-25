@@ -1,0 +1,162 @@
+#Action_3 {
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    overflow: hidden;
+    box-shadow: 0px 15px 15px -15px rgb(177, 175, 175);
+}
+.InpForm {
+    overflow: hidden;
+}
+.PayForm2 {
+    display: inline-block;
+    margin-top: 30px;
+    width: 80%;
+    vertical-align: top;
+}
+.InpInfo2 {
+    float: left;
+    width: 40%;
+    font-size: 16pt;
+    font-weight: 600;
+    color: grey;
+	margin-left: 10px;
+	margin-top: 30px;
+}
+.Inp2 {
+    float: right;
+    width: 55%;
+    padding-left: 10px;
+	margin-left: 0px;
+	margin-top: 30px;
+    outline: 0;
+    border: rgb(245, 245, 245);
+    background: inherit;
+	border-bottom: 2px solid rgb(209, 209, 209);
+	font-size: 16px;
+}
+.Inp2.ng-invalid.ng-touched {
+    border-bottom: 2px solid red;
+}
+.Inp2.ng-valid.ng-touched {
+    border-bottom: 2px solid green;
+}
+.MakeForm {
+    display: block;
+    width: 30%;
+    font-size: 16pt;
+    font-weight: 600;
+	margin-left: 10px;
+    margin-top: 40px;
+    font-size: 14pt;
+    font-weight: 500;
+    background-color: rgba(158, 136, 248, 0.329);
+    border: 1px solid grey;
+    height: 50px;
+    outline: 0;
+}
+.MakeForm:hover {
+    background-color: rgb(193, 179, 255);
+    cursor: pointer;
+}
+.MakeForm:disabled {
+    background-color: rgb(150, 150, 150);
+    cursor: default;
+}
+#NDSValue2 {
+    border-bottom: 2px solid green;
+}
+.FormRemove {
+    display: block;
+    font-size: 12pt;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-left: 10px;
+    color: rgb(132, 132, 250);
+    border-width: 0px;
+    background-color: white;
+    outline: 0;
+}
+.FormRemove:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.NDS {
+    font-size: 12pt;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-left: 10px;
+    color: rgb(132, 132, 250);
+    border-width: 0px;
+    background-color: white;
+    outline: 0;
+}
+.NDS:hover {
+    color: rgb(66, 66, 255);
+    cursor: pointer;
+}
+.NDSVariation {
+    float: right;
+    width: 45%;
+}
+.PayDescr {
+    padding: 6px;
+    padding-top: 30px;
+    font-size: 16pt;
+    font-weight: 600;
+}
+.PersDataMSG {
+    margin-left: 10px;
+    margin-top: 10px;
+    float: right;
+    width: 55%;
+}
+.PersDataMSG:hover {
+    color: rgb(66, 66, 255);
+    cursor: pointer;
+}
+@media (max-width: 767px) {
+    .NDSVariation {
+        float: left;
+        width: 80%;
+    }
+    .PayForm2 {
+        width: 100%;
+    }
+    .Inp2 {
+        float: left;
+        width: 80%;
+        font-size: 14px;
+    }
+    .InpInfo2 {
+        width: 80%;
+        font-size: 14pt;
+    }
+    .MakeForm {
+        font-size: 10pt;
+        width: 50%;
+    }
+    .PersDataMSG {
+        float: left;
+        width: 90%;
+    }
+}
+@media (max-width: 459px) {
+    .Inp2 {
+        font-size: 12px;
+        width: 100%;
+    }
+    .InpInfo2 {
+        font-size: 12pt;
+        width: 100%;
+    }
+    .MakeForm {
+        width: 100%;
+    }
+    .FormRemove {
+        font-size: 10pt;
+    }
+    .PersDataMSG {
+        font-size: 8pt;
+    }
+}

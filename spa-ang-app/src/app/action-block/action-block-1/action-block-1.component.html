@@ -1,0 +1,23 @@
+<div id="Action">
+    <div class="PayCard">
+        <div class="CardTypes"><img src='../../assets/cardTypes.png'></div>
+        <input class="CardInp" id="CardNumber" [(ngModel)]="payment.cardNum" name="CardNumber" #CardNumber="ngModel" type="text" placeholder="Номер карты" maxlength="20" mask="0000 0000 0000 0000" required pattern="[0-9]{16}">
+        <input class="CardInp" id="Date" [(ngModel)]="payment.date" name="Date" #Date="ngModel" type="text" placeholder="ММ/ГГ" maxlength="5" mask="00/00" required pattern="(0[1-9]|1[1-2])(1[7-9]|2[1-9]|3[1-5])">
+        <input class="CardInp" id="CVC" [(ngModel)]="payment.cvc" name="CVC" #CVC="ngModel" type="text" placeholder="CVC" maxlength="3" mask="000" required pattern="[0-9]{3}">
+    </div>
+    <div class="PayForm1">
+        <div class="InpForm">
+            <div class="InpInfo">Сумма</div>
+            <input class="Inp" [(ngModel)]="payment.sum" name="InpComment1" #InpComment1="ngModel" type="text" placeholder="от 1000 до 75000 ₽" maxlength="5" mask="00000" required pattern="^[1-9][\d]{3}$|^[1-6][\d]{4}$|^7[0-4][\d]{3}$|75000">
+        </div>
+        <div class="InpForm">
+            <div class="InpInfo">Комментарий</div>
+            <input class="Inp" [(ngModel)]="payment.comm" name="InpComment2" #InpComment2="ngModel" type="text" placeholder="До 150 символов" maxlength="150" required pattern="[a-zA-Zа-яА-Я0-9.,!?_ ]+">
+        </div>
+        <div class="InpForm">
+            <div class="InpInfo">Ваша эл.почта</div>
+            <input class="Inp" [(ngModel)]="payment.mail" name="InpComment3" #InpComment3="ngModel" type="text" placeholder="Для квитанций об оплате" maxlength="50" required pattern="[a-zA-Z0-9_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}">
+        </div>
+        <button [disabled]="CardNumber.invalid || Date.invalid || CVC.invalid || InpComment1.invalid ||InpComment2.invalid ||InpComment3.invalid" (click)="submit(payment)">Заплатить</button>
+    </div>
+</div>

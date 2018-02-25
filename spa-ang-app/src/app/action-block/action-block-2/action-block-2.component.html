@@ -1,0 +1,41 @@
+<div id="Action_2">
+  <div class="PayDescr">
+      Сформируйте платёжку и загрузите её в свой банк для подписи
+  </div>
+  <form name="form1" ng-controller="formController">
+    <div class="PayForm2">
+        <div class="InpForm">
+            <div class="InpInfo2">От кого</div>
+            <input class="Inp2" [(ngModel)]="payment.inn" name="from" #from="ngModel" type="text" placeholder="ИНН или название плательщика" maxlength="14" mask="0000 0000 0000" required pattern="^[0-9]{10}$|^[0-9]{12}$">
+        </div>
+        <div class="InpForm">
+            <div class="InpInfo2">БИК</div>
+            <input class="Inp2" [(ngModel)]="payment.bik" name="bik" #bik="ngModel" type="text" placeholder="" maxlength="11" mask="000 000 000" required pattern="[0-9]{9}">
+        </div>
+        <div class="InpForm">
+            <div class="InpInfo2">Номер счёта</div>
+            <input class="Inp2" [(ngModel)]="payment.accNum" name="idAcc" #idAcc="ngModel" type="text" placeholder="Назначение платежа" maxlength="24" mask="0000 0000 0000 0000 0000" required pattern="[0-9]{20}">
+        </div>
+        <div class="InpForm">
+            <div class="InpInfo2">За что</div>
+            <input class="Inp2" id="NDSValue1" name="InpComment4" type="text" placeholder="Без НДС" disabled value={{ndsVal}}>
+        </div>
+        <div class="InpForm">
+            <div class="InpInfo2">НДС</div>
+            <div class="NDSVariation">
+                <button class="NDS" type="button" (click)="chNDS(payment, 'НДС 18%')">НДС 18%</button>
+                <button class="NDS" type="button" (click)="chNDS(payment, 'НДС 10%')">НДС 10%</button>
+                <button class="NDS" type="button" (click)="chNDS(payment, 'Без НДС')">Без НДС</button>
+            </div>
+        </div>
+        <div class="InpForm">
+            <div class="InpInfo2">Сумма</div>
+            <input class="Inp2" [(ngModel)]="payment.sum" name="sum" #sum="ngModel" type="text" placeholder="" maxlength="5" mask="00000" required pattern="^[1-9][\d]{3}$|^[1-6][\d]{4}$|^7[0-4][\d]{3}$|75000">
+        </div>
+    </div>
+  
+    <button class="MakeForm" [disabled]="from.invalid || bik.invalid || idAcc.invalid || sum.invalid" type="submit" (click)="makeFile(payment)">Получить файл для интернет-банка</button>
+    <button class="FormRemove" type="reset">Очистить форму</button>
+    <div id="teststasus"></div>
+    </form>
+</div>

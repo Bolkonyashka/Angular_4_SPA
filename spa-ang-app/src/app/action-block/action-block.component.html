@@ -1,0 +1,21 @@
+<div class="tabs1">
+    <ul class="nav nav-pills">
+        <li class="choice active"><a href="#pay-all" data-toggle="pill">Заплатить</a></li>
+        <li class="choice"><a href="#req-pay" data-toggle="pill">Запросить платёж</a></li>
+    </ul>
+</div>
+<div class="tab-content">
+    <div id="pay-all" class="tab-pane fade in active">
+        <div class="tabs2">
+            <ul class="nav nav-pills">
+                <li class="option active"><a href="#pay-any" data-toggle="pill">С карты любого банка</a></li>
+                <li class="option"><a href="#pay-self" data-toggle="pill">Из своего интернет-банка</a></li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <app-action-block-1 id="pay-any" class="tab-pane fade in active"></app-action-block-1>
+            <app-action-block-2 id="pay-self" class="tab-pane fade"></app-action-block-2>
+        </div>
+    </div>
+    <app-action-block-3 id="req-pay" class="tab-pane fade"></app-action-block-3>
+</div>

@@ -1,0 +1,53 @@
+app-action-block-1 {
+    display: block;
+}
+
+app-action-block-2,
+app-action-block-3 {
+    display: none;
+}
+.tabs1 {
+    padding: 30px;
+    padding-top: 50px;
+    padding-bottom: 0px;
+}
+.tabs2 {
+    padding: 30px;
+    padding-left: 40px;
+    padding-top: 0px;
+}
+.choice {
+    display: inline-block;
+    font-size: 24pt;
+    font-weight: 600;
+    margin-right: 20px;
+    color: rgb(132, 132, 250);
+    background-color: white;
+}
+
+.choice:not(.active) a:hover {
+    color: rgb(66, 66, 255);
+    cursor: pointer;
+    background-color: white;
+}
+
+.option {
+    display: inline-block;
+    font-size: 12pt;
+    font-weight: 600;
+    margin-right: 20px;
+    color: rgb(132, 132, 250);
+    margin-bottom: 15px;
+}
+
+.option:not(.active) a:hover{
+    color: rgb(66, 66, 255);
+    cursor: pointer;
+    background-color: white;
+}
+
+.nav-pills > .active > a, .nav-pills > .active > a:hover {
+    color: black;
+    cursor: default;
+    background-color: white;
+}

@@ -1,0 +1,51 @@
+<div id="Action_3">
+  <div class="PayDescr">
+      Создайте платёжку, а Индивидуальный предприниматель Бессонов Роман Юрьевич подпишет её у себя в интернет-банке
+  </div>
+  <form>
+    <div class="PayForm2">
+        <div class="InpForm">
+            <div class="InpInfo2">ИНН получателя</div>
+            <input class="Inp2" [(ngModel)]="payment.inn" name="to" #to="ngModel" type="text" placeholder="ИНН или название получателя" maxlength="14" mask="0000 0000 0000" required pattern="^[0-9]{10}$|^[0-9]{12}$">
+        </div>
+        <div class="InpForm">
+            <div class="InpInfo2">БИК</div>
+            <input class="Inp2" [(ngModel)]="payment.bik" name="bik" #bik="ngModel"  type="text" placeholder="" maxlength="11" mask="000 000 000" required pattern="[0-9]{9}">
+        </div>
+        <div class="InpForm">
+            <div class="InpInfo2">Номер счёта</div>
+            <input class="Inp2" [(ngModel)]="payment.accNum" name="idAcc" #idAcc="ngModel" type="text" placeholder="Назначение платежа" maxlength="24" mask="0000 0000 0000 0000 0000" required pattern="[0-9]{20}">
+        </div>
+        <div class="InpForm">
+            <div class="InpInfo2">За что</div>
+            <input class="Inp2" id="NDSValue2" name="InpComment" type="text" placeholder="Без НДС" disabled value={{ndsVal}}>
+        </div>
+        <div class="InpForm">
+            <div class="InpInfo2">НДС</div>
+            <div class="NDSVariation">
+                <button class="NDS" type="button" (click)="chNDS(payment, 'НДС 18%')">НДС 18%</button>
+                <button class="NDS" type="button" (click)="chNDS(payment, 'НДС 10%')">НДС 10%</button>
+                <button class="NDS" type="button" (click)="chNDS(payment, 'Без НДС')">Без НДС</button>
+            </div>
+        </div>
+        <div class="InpForm">
+            <div class="InpInfo2">Сколько</div>
+            <input class="Inp2" [(ngModel)]="payment.sum" name="howmuch" #howmuch="ngModel" type="text" placeholder="" maxlength="5" mask="00000" required pattern="^[1-9][\d]{3}$|^[1-6][\d]{4}$|^7[0-4][\d]{3}$|75000">
+        </div>
+        <div class="InpForm">
+            <div class="InpInfo2">Телефон</div>
+            <input class="Inp2" [(ngModel)]="payment.phone" name="phone" #phone="ngModel" type="text" placeholder="+7**********" maxlength="16" mask="+7 000 000-00-00" required pattern="[0-9]{11}">
+        </div>
+        <div class="InpForm">
+                <div class="InpInfo2"></div>
+            <a class="PersDataMSG">Оставляя телефон, вы соглашаетесь на обработку персональных данных</a>
+        </div>
+        <div class="InpForm">
+            <div class="InpInfo2">Эл.почта</div>
+            <input class="Inp2" [(ngModel)]="payment.mail" name="mail" #mail="ngModel" type="text" placeholder="Для уведомлений об оплате" maxlength="50" required pattern="[a-zA-Z0-9_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}">
+        </div>
+    </div>
+    <button class="MakeForm" [disabled]="to.invalid || bik.invalid || idAcc.invalid || howmuch.invalid || phone.invalid || mail.invalid" (click)="submit(payment)">Создать платёж</button>
+    <button class="FormRemove" type="reset">Очистить форму</button>
+  </form>
+</div>

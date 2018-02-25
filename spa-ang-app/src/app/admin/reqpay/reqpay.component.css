@@ -1,0 +1,12 @@
+.top-el {
+    margin-top: 15px;
+}
+.bot-el {
+    margin-bottom: 15px;
+}
+.nsp {
+    background-color: #ff496c;
+}
+.nsp:hover {
+    background-color: hsl(348, 96%, 81%);
+}

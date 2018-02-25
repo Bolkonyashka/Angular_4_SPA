@@ -1,0 +1,6 @@
+.container {
+    position: relative;
+    border-left: 2px solid #a3a1a1;
+    border-right: 2px solid #a3a1a1;
+    border-bottom: 2px solid #a3a1a1;
+}
